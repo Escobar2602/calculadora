@@ -14,3 +14,15 @@ Route::get('/trapezoidal', function () {
 Route::get('/jorgeboole', function () {
     return view('jorgeboole');
 });
+
+Route::get('/Simpson3/8', function () {
+    return view('tSimpson3_8');
+});
+
+Route::get('/Simpson1/3', function () {
+    return view('tSimpson1_3');
+});
+
+Route::get('/simpson-abierto', function () {
+    return view('simpson_abierto');
+});
