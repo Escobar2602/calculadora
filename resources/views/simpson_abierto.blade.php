@@ -9,43 +9,65 @@
     </head>
 
     @vite('resources/css/app.css')
-    <div>
-        <nav class="bg-cyan-800 dark:bg-gray-800 fixed top-0 left-0 z-40 w-full">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <div class="flex items-center">
-                    <a href="/" class="flex items-center text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-                        <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
-                            <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
-                            <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
-                        </svg>
-                        <span class="ms-3">Dashboard</span>
-                    </a>
+    <body style="background-image: url('{{ asset('images/4054966.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div>
+            <nav class="bg-gray-500 bg-opacity-70 dark:bg-gray-800 fixed top-0 left-0 z-40 w-full">
+                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                    <div class="flex items-center">
+                        <a href="/" class="flex items-center text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                            <span class="ms-3">Inicio</span>
+                        </a>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="/trapezoidal" class="text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                            <span class="flex-1 ms-3 whitespace-nowrap">Trapezoidal</span>
+                        </a>
+                        <a href="/jorgeboole" class="text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                            <span class="flex-1 ms-3 whitespace-nowrap">George Boole</span>
+                        </a>
+                        <a href="/Simpson3/8" class="text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                            <span class="flex-1 ms-3 whitespace-nowrap">Simpson 3/8</span>
+                        </a>
+                        <a href="/Simpson1/3" class="text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                            <span class="flex-1 ms-3 whitespace-nowrap">Simpson 1/3</span>
+                        </a>
+                        <a href="/simpson-abierto" class="text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                            <span class="flex-1 ms-3 whitespace-nowrap">Simpson Abierto</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="flex space-x-4">
-                    <a href="/trapezoidal" class="text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-                        <span class="flex-1 ms-3 whitespace-nowrap">Trapezoidal</span>
-                    </a>
-                    <a href="/jorgeboole" class="text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-                        <span class="flex-1 ms-3 whitespace-nowrap">George Boole</span>
-                    </a>
-                    <a href="/Simpson3/8" class="text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-                        <span class="flex-1 ms-3 whitespace-nowrap">Simpson 3/8</span>
-                    </a>
-                    <a href="/Simpson1/3" class="text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-                        <span class="flex-1 ms-3 whitespace-nowrap">Simpson 1/3</span>
-                    </a>
-                    <a href="/simpson-abierto" class="text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-                        <span class="flex-1 ms-3 whitespace-nowrap">Simpson Abierto</span>
-                    </a>
-                </div>
+            </nav>
+        </div>
+
+        <div class="p-6 sm:mix-blend-screen min-h-screen flex items-center justify-center">
+            <div class="flex flex-col lg:flex-row items-center space-x-4">
+               <!-- Imagen -->
+            <div class="hidden lg:block mr-52 mt-14 float">
+                <img src="{{ asset('images/niño.png') }}" alt="Descripción de la imagen"
+                    class="w-[87%] h-auto rounded-lg shadow-md">
+                <h1 class="text-white text-4xl font-extrabold">EL QUE ESTUDIA TRIUNFA</h1>
             </div>
-        </nav>
+            <style>
+                @keyframes float {
+                    0% {
+                        transform: translatey(0);
+                    }
 
-    </div>
+                    50% {
+                        transform: translatey(-50px);
+                    }
 
-    <body>
-        <div class="p-6 sm:mix-blend-screen bg-gray-50 min-h-screen flex items-center justify-center">
-            <div class="bg-white w-96 p-6 rounded-lg shadow-md">
+                    100% {
+                        transform: translatey(0);
+                    }
+                }
+
+                .float {
+                    animation: float 3s ease-in-out infinite;
+                }
+            </style>
+                <!-- Formulario -->
+                <div class="bg-white w-[45%] p-6 rounded-lg shadow-md">
             <h1 class="text-3xl font-bold mb-6 text-gray-800">Método Simpson Abierto</h1>
 
             <form id="simpsonForm" class="space-y-4">
